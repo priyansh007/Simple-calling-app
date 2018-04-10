@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.provider.CallLog;
 import android.support.v4.app.ActivityCompat;
@@ -20,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -73,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void callme(View v) {
-
         Intent chooser=null;
+        /*
         if(v.getId()==R.id.image1){
             String tex=((TextView)findViewById(R.id.text2)).getText().toString();
             Intent callIntent = new Intent(Intent.ACTION_DIAL);
@@ -82,7 +84,24 @@ public class MainActivity extends AppCompatActivity {
             chooser = Intent.createChooser(callIntent,"CALL");
             startActivity(chooser);
 
-        }
+        }*/
+        ListView lvItems = (ListView) findViewById(R.id.list1);;
+
+        LinearLayout vwParentRow = (LinearLayout)v.getParent();
+        LinearLayout vwParentRow1 = (LinearLayout) vwParentRow.getChildAt(1);
+
+        //ImageView child = (ImageView) vwParentRow.getChildAt(0);
+        TextView child1 = (TextView) vwParentRow1.getChildAt(1);
+        String tex=child1.getText().toString();
+        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+        callIntent.setData(Uri.parse("tel:"+tex));
+        chooser = Intent.createChooser(callIntent,"CALL");
+        startActivity(chooser);
+        vwParentRow.refreshDrawableState();
+       /* int c = Color.CYAN;
+
+        vwParentRow.setBackgroundColor(c);
+        */
 
     }
 
