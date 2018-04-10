@@ -1,6 +1,8 @@
 package com.priyansh.project1;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,6 +26,14 @@ public class second extends AppCompatActivity {
         l = (ListView) findViewById(R.id.list2);
         new2 adapter = new new2(this, array, images,array1);
         l.setAdapter(adapter);
+    }
+
+    public void neww(View v) {
+
+
+        Intent toy = new Intent("com.priyansh.project1.example");
+        startActivity(toy);
+
     }
 }
 class new2 extends ArrayAdapter<String> {
