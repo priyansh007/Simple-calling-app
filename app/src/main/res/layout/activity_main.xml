@@ -64,6 +64,7 @@
 
              />
 
+
          <ImageView
              android:layout_width="80dp"
              android:layout_weight="1"
@@ -76,12 +77,23 @@
          <ImageView
              android:layout_width="80dp"
              android:layout_weight="1"
+             android:layout_height="60dp"
+             android:layout_marginTop="8dp"
+             android:src="@drawable/log"
+             android:clickable="true"
+             android:onClick="cal"
+             android:id="@+id/cali"
+             />
+         <ImageView
+             android:layout_width="80dp"
+             android:layout_weight="1"
              android:layout_height="70dp"
              android:src="@drawable/contact"
              android:clickable="true"
              android:onClick="cal"
              android:id="@+id/ca"
              />
+
 
      </LinearLayout>
 

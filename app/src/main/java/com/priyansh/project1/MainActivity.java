@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.provider.CallLog;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         if(v.getId()==R.id.ca) {
             Toast toast=Toast.makeText(this,"You are goig to Contact list",Toast.LENGTH_SHORT);
             toast.show();
-            Intent toy = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+            Intent toy = new Intent(Intent.ACTION_VIEW, ContactsContract.Contacts.CONTENT_URI);
 
             startActivity(toy);
         }
@@ -61,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
         if(v.getId()==R.id.ca2){
               // The number on which you want to send SMS
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", tex, null)));
+        }
+        if(v.getId()==R.id.cali){
+            Intent showCallLog = new Intent();
+            showCallLog.setAction(Intent.ACTION_VIEW);
+            showCallLog.setType(CallLog.Calls.CONTENT_TYPE);
+            startActivity(showCallLog);
         }
     }
 
