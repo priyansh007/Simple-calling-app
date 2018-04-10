@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         if(v.getId()==R.id.ca) {
             Toast toast=Toast.makeText(this,"You are goig to Contact list",Toast.LENGTH_SHORT);
             toast.show();
-            Intent toy = new Intent("com.priyansh.project1.second");
+            Intent toy = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+
             startActivity(toy);
         }
         String tex=((EditText)findViewById(R.id.text1)).getText().toString();

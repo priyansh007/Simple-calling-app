@@ -3,6 +3,7 @@ package com.priyansh.project1;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -31,9 +32,10 @@ public class second extends AppCompatActivity {
     public void neww(View v) {
 
 
-        Intent toy = new Intent("com.priyansh.project1.example");
-        startActivity(toy);
-
+        /*Intent showCallLog = new Intent();
+        showCallLog.setAction(Intent.ACTION_VIEW);
+        showCallLog.setType(CallLog.Calls.CONTENT_TYPE);
+        startActivity(showCallLog);*/
     }
 }
 class new2 extends ArrayAdapter<String> {
